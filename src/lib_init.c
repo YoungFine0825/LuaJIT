@@ -15,6 +15,8 @@
 
 #include "lj_arch.h"
 
+#include "lfs.h" // #yangfan
+
 static const luaL_Reg lj_lib_load[] = {
   { "",			luaopen_base },
   { LUA_LOADLIBNAME,	luaopen_package },
@@ -33,6 +35,7 @@ static const luaL_Reg lj_lib_preload[] = {
 #if LJ_HASFFI
   { LUA_FFILIBNAME,	luaopen_ffi },
 #endif
+  { LUA_LFSLIBNAME,	luaopen_lfs },// #yangfan
   { NULL,		NULL }
 };
 
